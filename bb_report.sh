@@ -1,8 +1,4 @@
 #!/bin/bash
-
-# Program untuk membuat laporan bug bounty
-
-# Warna untuk output
 GREEN="\033[0;32m"
 CYAN="\033[0;36m"
 RED="\033[0;31m"
@@ -11,7 +7,6 @@ RESET="\033[0m"
 echo -e "${CYAN}Bug Bounty Report Generator${RESET}"
 echo "--------------------------------------"
 
-# Fungsi untuk mengambil input dari pengguna
 read -p "Nama Target: " target
 read -p "Jenis Kerentanan (e.g., SQL Injection, XSS, CSRF): " vulnerability
 read -p "Langkah Eksploitasi (Pisahkan dengan ';'): " exploitation_steps
@@ -19,10 +14,8 @@ read -p "Dampak Kerentanan: " impact
 read -p "Rekomendasi Perbaikan: " mitigation
 read -p "Nama File Output (tanpa ekstensi): " filename
 
-# Format tanggal
 report_date=$(date +"%Y-%m-%d %H:%M:%S")
 
-# Menulis laporan ke file
 output_file="${filename}.txt"
 
 echo "--------------------------------------" > $output_file
@@ -50,6 +43,5 @@ echo "" >> $output_file
 echo "--------------------------------------" >> $output_file
 echo "End of Report" >> $output_file
 
-# Output ke terminal
 echo -e "${GREEN}Laporan telah berhasil dibuat!${RESET}"
 echo -e "File: ${CYAN}${output_file}${RESET}"
